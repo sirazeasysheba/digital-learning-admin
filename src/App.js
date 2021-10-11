@@ -8,7 +8,18 @@ import TopBar from "./components/Layout/TopBar";
 import Instructors from "./components/DashBoard/Instructors";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { isUserLoggedIn } from "./redux/actions";
 function App() {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (!auth.authenticate) {
+      dispatch(isUserLoggedIn());
+    }
+  }, []);
   return (
     <>
       <Switch>
@@ -18,15 +29,15 @@ function App() {
         <Route exact path="/signup">
           <SignUp />
         </Route>
-        <Route exact path="/dashboard">
+        <PrivateRoute exact path="/dashboard">
           <DashBoard />
-        </Route>
-        <Route exact path="/students">
+        </PrivateRoute>
+        <PrivateRoute exact path="/students">
           <Students />
-        </Route>
-        <Route exact path="/instructors">
+        </PrivateRoute>
+        <PrivateRoute exact path="/instructors">
           <Instructors />
-        </Route>
+        </PrivateRoute>
       </Switch>
     </>
   );

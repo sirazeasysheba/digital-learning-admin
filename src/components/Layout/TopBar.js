@@ -9,7 +9,15 @@ import {
   faCog,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "../../redux/actions";
 const TopBar = () => {
+  const auth = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(signOut());
+  };
+  const { name } = auth;
   return (
     <Container>
       <div className="dashboard-header d-flex justify-content-between my-3">
@@ -32,7 +40,7 @@ const TopBar = () => {
           <div className="profile me-2 mt-2 pb-3">
             <img src={profile} alt="" />
           </div>
-          <h6 className="text-white">Hi,Admin</h6>
+          <h6 className="text-white">{name}</h6>
           <div>
             <Dropdown>
               <Dropdown.Toggle className="dashboard-btn"></Dropdown.Toggle>
@@ -65,7 +73,10 @@ const TopBar = () => {
                   />{" "}
                   Setting
                 </Dropdown.Item>
-                <Dropdown.Item style={{ fontSize: 12, fontWeight: 700 }}>
+                <Dropdown.Item
+                  style={{ fontSize: 12, fontWeight: 700 }}
+                  onClick={logout}
+                >
                   <FontAwesomeIcon
                     icon={faSignOutAlt}
                     style={{

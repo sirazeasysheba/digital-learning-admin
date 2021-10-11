@@ -12,7 +12,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../Layout/Sidebar";
 import TopBar from "../Layout/TopBar";
+import { useSelector } from "react-redux";
 const DashBoard = () => {
+  
   return (
     <>
       <div>

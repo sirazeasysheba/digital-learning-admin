@@ -10,8 +10,14 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signOut } from "../../redux/actions";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(signOut());
+  };
   return (
     <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4">
       <ul className="list-unstyled">
@@ -68,8 +74,9 @@ const Sidebar = () => {
         </li>
       </ul>
       <div>
-        <Link to="/login" className="text-white text-decoration-none">
-          <FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span>
+        <Link to="/" className="text-white text-decoration-none">
+          <FontAwesomeIcon icon={faSignOutAlt} />{" "}
+          <span onClick={logout}>Logout</span>
         </Link>
       </div>
     </div>
