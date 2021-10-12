@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../../redux/actions";
+import { Link } from "react-router-dom";
 const TopBar = () => {
   const auth = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
@@ -60,7 +61,9 @@ const TopBar = () => {
                     }}
                     className="mt-2 text-muted"
                   />{" "}
-                  Profile
+                  <Link to="/profile" className="topbar-link">
+                    Profile
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item style={{ fontSize: 12, fontWeight: 700 }}>
                   <FontAwesomeIcon
@@ -71,7 +74,9 @@ const TopBar = () => {
                     }}
                     className="mt-2 text-dark"
                   />{" "}
-                  Setting
+                  <Link to="/admin/setting" className="topbar-link">
+                    Setting
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item
                   style={{ fontSize: 12, fontWeight: 700 }}

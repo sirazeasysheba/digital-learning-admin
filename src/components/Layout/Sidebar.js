@@ -49,7 +49,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/blog" className="text-white text-decoration-none">
+            <Link to="/blogs" className="text-white text-decoration-none">
               <FontAwesomeIcon icon={faCalendar} /> <span>Blog</span>
             </Link>
           </li>

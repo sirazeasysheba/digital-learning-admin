@@ -86,7 +86,7 @@
 }
 @media screen and (max-width: 600px) {
   .sidebar-container {
-    display: none;
+    display: flex;
   }
   .active-status,
   .block-status {
@@ -95,4 +95,8 @@
   .admin-table {
     overflow: scroll;
   }
+}
+.topbar-link {
+  text-decoration: none;
+  color: #212529;
 }

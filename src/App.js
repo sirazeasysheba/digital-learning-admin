@@ -12,6 +12,12 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isUserLoggedIn } from "./redux/actions";
+import Courses from "./components/DashBoard/Courses";
+import Setting from "./components/DashBoard/Setting";
+import Blog from "./components/DashBoard/Blog";
+import AddInstructors from "./components/DashBoard/AddInstructors";
+import AddCourse from "./components/DashBoard/AddCourse";
+import Profile from "./components/DashBoard/Profile";
 function App() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -37,6 +43,24 @@ function App() {
         </PrivateRoute>
         <PrivateRoute exact path="/instructors">
           <Instructors />
+        </PrivateRoute>
+        <PrivateRoute exact path="/all-courses">
+          <Courses />
+        </PrivateRoute>
+        <PrivateRoute exact path="/admin/setting">
+          <Setting />
+        </PrivateRoute>
+        <PrivateRoute exact path="/blogs">
+          <Blog />
+        </PrivateRoute>
+        <PrivateRoute exact path="/add-instructors">
+          <AddInstructors />
+        </PrivateRoute>
+        <PrivateRoute exact path="/add-course">
+          <AddCourse />
+        </PrivateRoute>
+        <PrivateRoute exact path="/profile">
+          <Profile />
         </PrivateRoute>
       </Switch>
     </>

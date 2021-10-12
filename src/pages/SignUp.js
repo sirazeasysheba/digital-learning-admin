@@ -32,6 +32,9 @@ const SignUp = () => {
   return (
     <div>
       <Container className="mt-5">
+        <div className="text-center mb-5">
+          <h3>Sign Up to Continue</h3>
+        </div>
         <Row>
           <Col md={{ span: 5, offset: 4 }}>
             <Form onSubmit={userSignup}>
@@ -41,6 +44,7 @@ const SignUp = () => {
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                className="mb-2"
               />
               <Input
                 label="Username*"
@@ -48,6 +52,7 @@ const SignUp = () => {
                 placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                className="mb-2"
               />
               <Input
                 label="Email*"
@@ -55,6 +60,7 @@ const SignUp = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="mb-2"
               />
               <Input
                 label="Phone*"
@@ -62,6 +68,7 @@ const SignUp = () => {
                 placeholder="Phone"
                 value={contactNumber}
                 onChange={(e) => setContactNumber(e.target.value)}
+                className="mb-2"
               />
               <Input
                 label="Password *"
@@ -69,9 +76,10 @@ const SignUp = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="mb-2"
               />
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" className="mb-2">
                 Signup{" "}
               </Button>
             </Form>

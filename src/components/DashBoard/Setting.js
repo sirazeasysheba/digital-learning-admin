@@ -2,8 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import Sidebar from "../Layout/Sidebar";
 import TopBar from "../Layout/TopBar";
-
-const Courses = () => {
+const Setting = () => {
   return (
     <Row>
       <Col md={2} className="sidebar-container">
@@ -20,4 +19,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Setting;

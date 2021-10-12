@@ -30,6 +30,12 @@ const Login = () => {
   return (
     <div>
       <Container className="mt-5">
+        <div className="text-center mb-5">
+          <h3>
+            Welcome to <br /> Digital Learning Admin page
+          </h3>
+          <p className="text-muted">Login to continue</p>
+        </div>
         <Row>
           <Col md={{ span: 5, offset: 4 }}>
             <Form onSubmit={userLogin}>
@@ -39,6 +45,7 @@ const Login = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="mb-2"
               />
               <Input
                 label="Password *"
@@ -46,6 +53,7 @@ const Login = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="mb-2"
               />
               <Form.Group className="mb-3">
                 <Form.Check type="checkbox" label="Remember me?" />
